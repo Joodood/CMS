@@ -47,6 +47,8 @@ class Users extends Controller {
                 $this->view('users/Login_view', $errors);
             }
 
+
+            //**extremely important, returns a row
             $loggedInUser = $this->usermodel->login($_POST['login_email'], $_POST['login_password']);
             //if login function returns the row with all the id, name, pass and email of user, and it evals to true, then..
             if($loggedInUser) {

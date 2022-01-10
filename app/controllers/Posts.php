@@ -30,22 +30,21 @@ class Posts extends Controller {
             require_once "PostValidate.php";
             $guy = new ValidatePost($_POST);
             $err = $guy->validateBlogForm();
-            print_r($err);
+//            print_r($err);
             if(in_array("body cannot be empty", $err)){
                 $this->view('posts/add', $err);
             } elseif (in_array("title cannot be empty", $err)) {
                 $this->view('posts/add', $err);
             } else {
                 //push the session_id onto $err
-                array_push($err, $_SESSION['user_id']);
+//                array_push($err, $_SESSION['user_id']);
                 //Validated
-                if($this->postModel->addPost($err)) {
-                    flash('post_added', 'Post Added');
-                    redirect('posts');
-                } else {
-                    die('Something went wrong.');
-                }
+                //SUCCESSFULL
+                $this->postModel->addPost($err);
+//                $this->view('posts');
+                redirect('posts');
             }
+
         } else {
             $this->view('posts/add');
         }
@@ -54,6 +53,16 @@ class Posts extends Controller {
             'body' => ''
         ];
         $this->view('posts/add', $data);
+    }
+
+    public function show($id) {
+        //id is of type array, it looks like Array([0]=>16) array
+        $post = $this->postModel->getPostById($id[0]);
+
+        $data = ['post'=> $post,
+        ];
+
+        $this->view('posts/show', $data);
     }
 }
 

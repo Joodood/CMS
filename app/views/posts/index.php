@@ -41,13 +41,19 @@
  <?php foreach($data['posts'] as $post) : ?>
 
         <h4><?php echo $post->title; ?></h4>
+
+<!--     <h5>--><?php //echo $post->postId; ?><!--</h5>-->
+<!--    --><?php //echo gettype($post->postId);?>
+
         <p>Written by <?php echo $post->name; ?> on <?php echo $post->postCreated; ?></p>
         <p2><?php echo $post->body; ?></p2>
 <!--        <a href = "--><?php //echo URlROOT; ?><!--/posts/show/--><?php //echo $post->postId; ?><!--">More</a>-->
 
+<!-- getting a new set of information when you click on show-->
+
      <a href = "<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>">More</a>
 
-
+<!--     --><?php //echo $post->postId; ?>
  <?php endforeach; ?>
 </div>
 

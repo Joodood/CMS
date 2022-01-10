@@ -9,6 +9,7 @@ class ValidatePost {
 
     public function __construct($post) {
             $this->data = $post;
+            $this->perfpost['user_id'] = $_SESSION['user_id'];
     }
 
     public function validateBlogForm() {

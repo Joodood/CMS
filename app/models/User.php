@@ -32,7 +32,8 @@ class User {
 
     public function login($email, $password) {
         $this->db->query('SELECT * FROM users WHERE email = :email');
-        $this->db->bind('email', $email);
+        $this->db->bind(':email', $email);
+        //single returns an array of database of columns for users: id, name, email, password, (created_at)
         $row = $this->db->single();
         if(is_bool($row) || empty($row)) {
             return false;

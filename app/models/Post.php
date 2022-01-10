@@ -26,10 +26,23 @@ class Post {
 
 
     public function addPost($err) {
-        $this->db->query('INSERT INTO posts (title, user_id,body) VALUES (:title, :user_id, :body)');
+        $this->db->query('INSERT INTO posts (title, user_id, body) VALUES (:title, :user_id, :body)');
         $this->db->bind(':title', $err['title']);
         $this->db->bind(':user_id', $err['user_id']);
         $this->db->bind(':body', $err['body']);
         $this->db->execute();
+    }
+
+    public function getPostById($id) {
+        $id = (int) $id;
+        $this->db->query('SELECT * FROM posts WHERE id=:id');
+        $this->db->bind(':id', $id, PDO::PARAM_INT);
+        $row = $this->db->single();
+//        if(is_bool($row)) {
+//            die("The row is a bool");
+//        } else {
+//            return $row;
+//        }
+        return $row;
     }
 }
