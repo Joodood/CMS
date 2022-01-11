@@ -24,6 +24,19 @@ class Post {
 
     }
 
+    public function updatePost($data) {
+        $this->db->query('UPDATE posts SET title = :title, body = :body WHERE id = :id');
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':title', $data['title']);
+        $this->db->bind(':body', $data['body']);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
     public function addPost($err) {
         $this->db->query('INSERT INTO posts (title, user_id, body) VALUES (:title, :user_id, :body)');
@@ -34,7 +47,7 @@ class Post {
     }
 
     public function getPostById($id) {
-        $id = (int) $id;
+//        $id = (int) $id;
         $this->db->query('SELECT * FROM posts WHERE id=:id');
         $this->db->bind(':id', $id, PDO::PARAM_INT);
         $row = $this->db->single();
@@ -45,4 +58,34 @@ class Post {
 //        }
         return $row;
     }
+
+
+    public function deletePost($id) {
+
+        $this->db->query('DELETE from posts WHERE id = :id');
+        $this->db->bind(':id', $id, PDO::PARAM_INT);
+
+        if($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

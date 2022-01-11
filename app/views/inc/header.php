@@ -23,11 +23,20 @@
 
     <div class = "right-nav">
 
+<!--        <a href = "#" class = "login-button">Welcome --><?php //echo $_SESSION['user_name'];?><!-- </a>-->
+
+
         <?php if(isset($_SESSION['user_id'])) : ?>
+
+            <a href = "#" class = "login-button">Welcome <?php echo $_SESSION['user_name'];?> </a>
+
+
             <a href = "<?php echo URLROOT; ?>/Users/logout" class = "login-button">Logout</a>
 
         <?php else : ?>
         <a href = "<?php echo URLROOT; ?>/Users/login" class = "login-button">Login</a>
+
+
         <a href = "<?php echo URLROOT; ?>/Users/Register" class = "register-button">Register</a>
         <?php endif; ?>
     </div>
