@@ -10,20 +10,20 @@ class User {
 
     public function InsertIntoDatabase($perfusername, $perfpass, $perfemail)
     {
-//        date_default_timezone_set('America/Chicago');
-//        $date = date('F d, Y, h:i:s a');
-//        $this->db->query('INSERT INTO users (name, password,email,  created_at) VALUES (:name, :password, :email, :created_at)');
-//        $this->db->bind(':name', $perfusername);
-//        $this->db->bind(':password', $perfpass);
-//        $this->db->bind(':email', $perfemail);
-//        $this->db->bind(':created_at', $date);
-//        $this->db->execute();
-
-        $this->db->query('INSERT INTO users (name, password, email) VALUES (:name, :password, :email)');
+        date_default_timezone_set('America/Chicago');
+        $date = date('F d, Y, h:i:s a');
+        $this->db->query('INSERT INTO users (name, password,email,  created_at) VALUES (:name, :password, :email, :created_at)');
         $this->db->bind(':name', $perfusername);
         $this->db->bind(':password', $perfpass);
         $this->db->bind(':email', $perfemail);
+        $this->db->bind(':created_at', $date);
         $this->db->execute();
+
+//        $this->db->query('INSERT INTO users (name, password, email) VALUES (:name, :password, :email)');
+//        $this->db->bind(':name', $perfusername);
+//        $this->db->bind(':password', $perfpass);
+//        $this->db->bind(':email', $perfemail);
+//        $this->db->execute();
     }
 
     public function doesemailexist($email){
