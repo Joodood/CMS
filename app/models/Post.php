@@ -39,10 +39,13 @@ class Post {
     }
 
     public function addPost($err) {
-        $this->db->query('INSERT INTO posts (title, user_id, body) VALUES (:title, :user_id, :body)');
+        date_default_timezone_set('America/Chicago');
+        $date = date('F d, Y, h:i:s a');
+        $this->db->query('INSERT INTO posts (title, user_id, body, created_at) VALUES (:title, :user_id, :body, :created_at)');
         $this->db->bind(':title', $err['title']);
         $this->db->bind(':user_id', $err['user_id']);
         $this->db->bind(':body', $err['body']);
+        $this->db->bind(':created_at', $date);
         $this->db->execute();
     }
 

@@ -1,12 +1,30 @@
 <?php require_once APPROOT . "/views/inc/header.php"; ?>
 
 <style>
+
+    * {
+        font-size: 22px;
+        font-family: 'space';
+
+    }
+    .edit {
+        text-decoration: none;
+        font-size: 36px;
+        color: #ffffff;
+        background-color: #007FFF;
+    }
+
+    .back {
+        text-decoration: none;
+        font-size: 36px;
+    }
+
     form {
         float: right;
     }
 </style>
 
-<a href = "<?php echo URLROOT; ?>/posts">Back</a>
+<a class = "back" href = "<?php echo URLROOT; ?>/posts">Back</a>
 <br>
 
 
@@ -24,7 +42,7 @@
 
 <?php if ($data['post']->user_id == $_SESSION['user_id']) : ?>
     <hr>
-    <a href = "<?php echo URLROOT; ?>/posts/edit/<?php echo $data['post']->id; ?>">Edit</a>
+    <a class = "edit" href = "<?php echo URLROOT; ?>/posts/edit/<?php echo $data['post']->id; ?>">Edit</a>
 
 
     <form action = "<?php echo URLROOT; ?>/posts/delete/<?php echo $data['post']->id; ?>" method="post">

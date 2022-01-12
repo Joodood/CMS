@@ -2,13 +2,32 @@
 require_once APPROOT . "/views/inc/header.php"; ?>
 
 <style>
+    * {
+        font-size: 22px;
+        font-family: 'space';
+
+    }
+    .post-container {
+        display: grid;
+        justify-content: center;
+    }
+
+    .back {
+        font-size: 32px;
+        text-decoration: none;
+    }
+
     .error {
         color: red;
+    }
+
+    .sub {
+        color: #007FFF;
     }
 </style>
 
 <!--<a href = "--><?php //echo URLROOT; ?><!--/posts/">Back</a>-->
-<a href = "<?php echo URLROOT; ?>/posts/show/<?php echo $data['id'];?>">Back</a>
+<a class = "back" href = "<?php echo URLROOT; ?>/posts/show/<?php echo $data['id'];?>">Back</a>
 
 
 <div class = "post-container">
@@ -38,7 +57,7 @@ require_once APPROOT . "/views/inc/header.php"; ?>
         </div>
 
 
-        <input type = "submit" value = "submit_post">
+        <input class = "sub" type = "submit" value = "submit_post">
 
 
     </form>

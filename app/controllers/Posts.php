@@ -18,6 +18,7 @@ class Posts extends Controller {
         //Get posts
         $posts = $this->postModel->getPosts();
         $data = ['posts'=>$posts];
+//        print_r($data);
 
         $this->view('posts/index', $data);
     }

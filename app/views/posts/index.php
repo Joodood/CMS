@@ -19,7 +19,7 @@
     }
 
     .first-col {
-        background: #007FFF;
+        /*background: #007FFF;*/
         padding: 5px 10px;
         position: absolute;
     }
@@ -77,12 +77,17 @@
         font-family: "Courier New";
     }
 
+    #h {
+        color: #ffffff ;
+        background-color: #333333;
+    }
+
 </style>
 
 
 <div class = "row">
     <div class = "first-col">
-        <h1>Posts</h1>
+        <h1 id = "h">Posts</h1>
     </div>
 
     <div class = "second-col">
@@ -103,7 +108,7 @@
 <!--        <p>Written by --><?php //echo $post->name; ?><!-- on --><?php //echo $post->postCreated; ?><!--</p>-->
         <p2><?php echo $post->body; ?></p2>
 <!--        <a href = "--><?php //echo URlROOT; ?><!--/posts/show/--><?php //echo $post->postId; ?><!--">More</a>-->
-     <p class = "info">Written by <?php echo $post->name; ?> on <?php echo $post->postCreated; ?></p>
+    <p class = "info"><b>Written by <?php echo $post->name; ?></b> on <?php echo $post->postCreated; ?></p>
 <!-- getting a new set of information when you click on show-->
 
      <a class = 'more' href = "<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?> ">More</a>

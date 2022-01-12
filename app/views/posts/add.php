@@ -2,13 +2,38 @@
 require_once APPROOT . "/views/inc/header.php"; ?>
 
 <style>
+    * {
+        font-family: 'space';
+    }
+    .post-container {
+        display: grid;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+        .body {
+            font-size: 22px;
+        }
+
+        .tit {
+            font-size: 25px;
+        }
+
     .error {
         color: red;
+    }
+    .back {
+        background-color: #007FFF;
+        color: white;
+        text-decoration: none;
+        font-size: 32px;
+        font-family: 'space';
+        margin: 14px 10px;
     }
 
 </style>
 
-<a href = "<?php echo URLROOT; ?>/posts">Back</a>
+<a class = 'back' href = "<?php echo URLROOT; ?>/posts">Back</a>
 
 
 
@@ -23,7 +48,7 @@ require_once APPROOT . "/views/inc/header.php"; ?>
 
         <label>Title: </label>
 <!--        <input type = "text" name = "title" --><?php //echo (!empty($data['title'])) ? '' : "";?><!-- value = "--><?php //echo $data['title']; ?><!--"><br />-->
-        <input type = "text" name = "title"><br />
+        <input type = "text" class = 'tit' name = "title"><br />
 
 
         <div class = "error">
@@ -33,7 +58,7 @@ require_once APPROOT . "/views/inc/header.php"; ?>
 
 
         <label>Body: </label>
-        <textarea name = "body" value = "<?php if(isset($_POST['body_err']) ? htmlspecialchars($_POST['body']) : '');?>"></textarea>
+        <textarea name = "body" class = 'body' rows = '5' cols = '50' value = "<?php if(isset($_POST['body_err']) ? htmlspecialchars($_POST['body']) : '');?>"></textarea>
         <div class = "error">
             <?php echo $data['body'] ?? '';?>
         </div>
