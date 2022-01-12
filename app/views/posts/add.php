@@ -5,6 +5,7 @@ require_once APPROOT . "/views/inc/header.php"; ?>
     .error {
         color: red;
     }
+
 </style>
 
 <a href = "<?php echo URLROOT; ?>/posts">Back</a>

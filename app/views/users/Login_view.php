@@ -2,9 +2,29 @@
 require_once APPROOT . "/views/inc/header.php"; ?>
 
 <style>
+    * {
+        font-family: 'space';
+        font-size: 22px;
+    }
+    .login-container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: grid;
+        justify-content: center;
+
+        /*grid-template-columns: 200px;*/
+        /*grid-template-rows: 300px;*/
+        border-style: solid;
+        /*border-radius: 30px;*/
+        /*border-color: #737373;*/
+    }
     .error {
         color: red;
     }
+    #inme {
+        background-color: #007FFF;
+    }
+
 </style>
 
 <div class = "login-container">
@@ -31,7 +51,7 @@ require_once APPROOT . "/views/inc/header.php"; ?>
         </div>
 
 
-    <input type = "submit" name = "login_submit" value = "submit">
+    <input type = "submit" id = "inme" name = "login_submit" value = "submit">
 
 
     </form>

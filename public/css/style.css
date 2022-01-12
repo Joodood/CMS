@@ -2,12 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /*background-color: #333333;*/
+
+}
+
+@font-face {
+    /*src: url('Optimus.otf');*/
+    /*font-family: 'op';*/
+    /*src: url('cubic.ttf');*/
+    /*font-family: 'cu';*/
+    /*src: url("Alien Planet.otf");*/
+    /*font-family: 'alien';*/
+    src: url("SpaceMono-Regular.ttf");
+    font-family: 'space' ;
 }
 
 .top-nav {
-    font-family: sans-serif;
-    background-color: #ee3e80;
+    /*font-family: "Times New Roman";*/
+    font-family: 'space' ;
+    /*background-color: #ee3e80;*/
+    /*background-color: #007FFF;*/
+    background-color: #333333;
+    /*background-color: #ffffff;*/
+    /*background-color: #737373;*/
     overflow: hidden;
+    font-size: 16px;
+    /*color: #ffffff;*/
+    border-style: groove;
+    border-width: .5px;
+    border-color: #737373;
+    border-radius:5px;
+    color: #ffffff;
 }
 
 .top-nav .left-nav {
@@ -15,13 +40,17 @@
     padding: 14px 2px;
     color: black;
     font-size: 20px;
-    font-family: "Arial Black";
+    /*font-family: "Times New Roman";*/
+
+    font-family: 'space' ;
     display: flex;
+    color: #ffffff;
 }
 .top-nav .left-nav a {
     text-decoration: none;
     list-style: none;
     margin-left: .5rem;
+    color: #ffffff;
 }
 
 .top-nav .right-nav {
@@ -30,12 +59,16 @@
     padding: 14px 16px;
     float: right;
     font-size: 20px;
-    font-family: "Arial Black";
+    /*font-family: 'Times New Roman';*/
+    font-family: 'space' ;
+    /*background-color: #ffffff;*/
+    color: #ffffff;
 }
 
 .top-nav .right-nav a {
     text-decoration: none;
     list-style: none;
+    color: #ffffff;
 }
 
 .top-nav a:hover {

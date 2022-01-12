@@ -2,10 +2,38 @@
 <?php //print_r($data);?>
 
 <style>
+    * {
+        font-family: 'space';
+        font-size: 22px;
+    }
 
+    .register-container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        /*display: flex;*/
+        /*align-content: center;*/
+        /*justify-content: center;*/
+        display: grid;
+        justify-content: center;
+        /*grid-template-columns: 200px;*/
+        /*grid-template-rows: 300px;*/
+        border-style: solid;
+
+        /*border-radius: 30px;*/
+        /*border-color: #737373;*/
+        /*position: absolute;*/
+    }
+    /*input {*/
+    /*    line-height: 5px;*/
+    /*}*/
 
     .error {
         color: red;
+    }
+
+    #inme {
+        background-color: #007FFF;
+
     }
 </style>
 
@@ -44,7 +72,7 @@
 
         <br />
 
-        <input type = "submit" name = "wuby" value = "submit">
+        <input type = "submit" id = "inme" name = "wuby" value = "submit">
     </form>
 </div>
 

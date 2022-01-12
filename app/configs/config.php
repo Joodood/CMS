@@ -14,8 +14,8 @@ define('APPROOT', dirname(dirname(__FILE__)));
 
 
 
-define('URLROOT', 'http://localhost/fifty');
+define('URLROOT', 'http://localhost/fiftysix');
 
 
-define('SITENAME', 'Fifty');
+define('SITENAME', 'Fiftysix');
 ?>
