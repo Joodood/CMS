@@ -33,7 +33,7 @@
 
         <?php if(isset($_SESSION['user_id'])) : ?>
 
-            <a href = "#" class = "login-button">Welcome <?php echo $_SESSION['user_name'];?> </a>
+            <a href = "<?php echo URLROOT; ?>" class = "login-button">Welcome <?php echo $_SESSION['user_name'];?> </a>
 
 
             <a href = "<?php echo URLROOT; ?>/Users/logout" class = "login-button">Logout</a>
