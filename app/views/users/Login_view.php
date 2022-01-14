@@ -23,6 +23,9 @@ require_once APPROOT . "/views/inc/header.php"; ?>
     }
     #inme {
         background-color: #007FFF;
+        border-color: #333333;
+        border-radius: 5px;
+        border-style: solid;
     }
 
 </style>
