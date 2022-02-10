@@ -23,6 +23,16 @@
 <!--    <a href = "--><?php //echo URLROOT; ?><!--/Users/login" class = "login-button">Login</a>-->
 <!--    <a href = "--><?php //echo URLROOT; ?><!--/Users/Register" class = "register-button">Register</a>-->
         <a href = "<?php echo URLROOT; ?>/Contact">Contact Us</a>
+
+        <?php if(isset($_SESSION['user_id'])) : ?>
+
+        <a href = "<?php echo URLROOT; ?>" class = "bands">Bands</a>
+
+        <?php else : ?>
+
+        <?php endif; ?>
+
+
     </div>
 
 
